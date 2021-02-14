@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Login1View" customModule="app" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Login1View" customModule="t2102141334ecom" customModuleProvider="target">
             <connections>
                 <outlet property="buttonHideShowPassword" destination="9Cr-lm-T6G" id="EPn-GM-jww"/>
                 <outlet property="imageViewLogo" destination="6mY-FI-59H" id="Nx0-aH-KPm"/>
