@@ -6,6 +6,7 @@
       pod 'Then'
       pod 'SwiftLint'
       pod 'Kingfisher'
+      pod 'IQKeyboardManagerSwift'
 
 target 't2102141334ecom' do
   # Comment the next line if you don't want to use dynamic frameworks

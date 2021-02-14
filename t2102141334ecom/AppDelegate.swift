@@ -6,16 +6,30 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+//@UIApplicationMain
+//class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+    var Login1View: Login1View!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        sleep(10)
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        Login1View = t2102141334ecom.Login1View(nibName: "Login1View", bundle: nil)
+        let navController = NavigationController(rootViewController: Login1View)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
         
         return true
     }
