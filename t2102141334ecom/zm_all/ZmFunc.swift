@@ -19,6 +19,7 @@ class ZmFunc {
             print("\(temp_str)")
         #else
 //            print("\(temp_str)")
+//            dump(temp_str)
         #endif
     }
 /*

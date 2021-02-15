@@ -7,6 +7,8 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
+
 
 //@main
 //class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         ZmFunc().dlog("AppDelegate - UIApplication.LaunchOptionsKey")
+        
+        FirebaseApp.configure()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         

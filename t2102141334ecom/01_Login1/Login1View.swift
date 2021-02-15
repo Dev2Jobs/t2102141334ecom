@@ -1,5 +1,4 @@
 //
-//  Login1View.swift
 //  t2102141334ecom
 //
 //  Created by soul on 2021/02/14.
@@ -17,7 +16,7 @@ class Login1View: UIViewController {
 	@IBOutlet var textFieldPassword: UITextField!
 	@IBOutlet var buttonHideShowPassword: UIButton!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+    
 	override func viewDidLoad() {
         ZmFunc().dlog("Login1View - viewDidLoad")
 
