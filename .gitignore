@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,cocoapods
 
 ### Other ###
-GoogleService-Info.plist
-1122Assets.xcassets/
+t2102141334ecom/GoogleService-Info.plist
+t2102141334ecom/1122Assets.xcassets/
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
