@@ -15,6 +15,14 @@ import Then
 class ZmFunc {
     
     func dlog(_ temp_str: String) {
+        if ( "" == temp_str) {
+            return
+        }
+        
+        if ( nil == temp_str) {
+            return
+        }
+        
         #if DEBUG
             print("\(temp_str)")
         #else
@@ -22,6 +30,7 @@ class ZmFunc {
 //            dump(temp_str)
         #endif
     }
+    
 /*
          실제사이즈에 디자인 전체 사이즈 만큼 퍼센트 계산한 결과값
          - parameter size:       컴포넌트 사이즈

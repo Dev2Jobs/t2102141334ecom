@@ -64,7 +64,26 @@ class Login1View: UIViewController {
 	@IBAction func actionSignUp(_ sender: Any) {
         ZmFunc().dlog("Login1View - actionSignUp")
 
-		print(#function)
-		dismiss(animated: true)
+//		print(#function)
+//		dismiss(animated: true)
+        
+        move_sign(1)
 	}
+    
+    func move_sign(_ temp_num: Int) {
+        if ( 1 == temp_num ) {
+            let signUp1View = SignUp1View()
+            let navigation = NavigationController(rootViewController: signUp1View)
+            navigation.isModalInPresentation = true
+            navigation.navigationBar.isTranslucent = false
+            navigation.modalPresentationStyle = .fullScreen
+            present(navigation, animated: true)
+        }else if ( 2 == temp_num ) {
+            let signUp2View = SignUp2View()
+            let navigation = NavigationController(rootViewController: signUp2View)
+            navigation.isModalInPresentation = true
+            navigation.modalPresentationStyle = .fullScreen
+            present(navigation, animated: true)
+        }
+    }
 }
