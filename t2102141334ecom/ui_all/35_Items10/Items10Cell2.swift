@@ -10,26 +10,30 @@
 // THE SOFTWARE.
 
 import UIKit
-import Kingfisher
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-extension UIImageView {
+class Items10Cell2: UITableViewCell {
+
+	@IBOutlet var imageProduct: UIImageView!
+	@IBOutlet var buttonMore: UIButton!
+	@IBOutlet var labelTitle: UILabel!
+	@IBOutlet var labelBrandName: UILabel!
+	@IBOutlet var labelPrice: UILabel!
+	@IBOutlet var labelOriginalPrice: UILabel!
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func sample(_ topic: String, _ subtopic: String, _ index: Int) {
+	func bindData(index: IndexPath, data: [String: String]) {
 
-		KingfisherManager.shared.downloader.downloadTimeout = 600
-		let processor = DownsamplingImageProcessor(size: self.frame.size)
-		let options: KingfisherOptionsInfo = [.processor(processor), .scaleFactor(UIScreen.main.scale), .transition(.fade(0.5)), .downloadPriority(1.0)]
+		guard let title = data["title"] else { return }
+		guard let brand = data["brand"] else { return }
+		guard let price = data["price"] else { return }
+		guard let originalPrice = data["originalPrice"] else { return }
 
-		let url = URL(string: String(format: "https://relatedcode.com/pics/\(topic)/\(subtopic)/%02d.jpg", index+1))
-
-		let size = CGSize(width: 1, height: 1)
-		let placeholder = UIGraphicsImageRenderer(size: size).image { rendererContext in
-			UIColor.lightGray.setFill()
-			rendererContext.fill(CGRect(origin: .zero, size: size))
-		}
-
-		self.kf.setImage(with: url, placeholder: placeholder, options: options)
+		imageProduct.sample("Ecommerce", "Clothes", index.row+15)
+		labelTitle.text = title
+		labelBrandName.text = brand
+		labelPrice.text = price
+		labelOriginalPrice.text = originalPrice
+		labelOriginalPrice.isHidden = (originalPrice == "")
 	}
 }

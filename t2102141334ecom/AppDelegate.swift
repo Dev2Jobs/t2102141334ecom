@@ -25,8 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         ZmFunc().dlog("AppDelegate - UIApplication.LaunchOptionsKey")
-        
+// [START default_firestore]
         FirebaseApp.configure()
+//        let db = Firestore.firestore()
+// [END default_firestore]
+//        print(db) // silence warning
 
         window = UIWindow(frame: UIScreen.main.bounds)
         

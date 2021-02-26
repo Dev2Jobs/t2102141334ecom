@@ -1,17 +1,5 @@
 //
-//  Copyright (c) 2020 Google LLC
-//
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
+//  Created by soul on 2021/02/14.
 //
 
 import UIKit
@@ -37,6 +25,8 @@ private class SaveAlertHandle {
 extension UIViewController {
     
     public func displayError(_ error: Error?, from function: StaticString = #function) {
+        ZmFunc().dlog("extension UIViewController - displayError")
+        
       guard let error = error else { return }
       print("ⓧ Error in \(function): \(error.localizedDescription)")
       let message = "\(error.localizedDescription)\n\n Ocurred in \(function)"
@@ -54,6 +44,8 @@ extension UIViewController {
    @param message The message to display.
    */
   func showMessagePrompt(_ message: String) {
+    ZmFunc().dlog("extension UIViewController - showMessagePrompt")
+    
     let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
     alert.addAction(okAction)
@@ -67,6 +59,8 @@ extension UIViewController {
    */
   func showTextInputPrompt(withMessage message: String,
                            completionBlock: @escaping ((Bool, String?) -> Void)) {
+    ZmFunc().dlog("extension UIViewController - showTextInputPrompt")
+    
     let prompt = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
       completionBlock(false, nil)
@@ -87,6 +81,8 @@ extension UIViewController {
    @param completion Called after the spinner has been hidden.
    */
   func showSpinner(_ completion: (() -> Void)?) {
+    ZmFunc().dlog("extension UIViewController - showSpinner")
+    
     let alertController = UIAlertController(title: nil, message: "Please Wait...\n\n\n\n",
                                             preferredStyle: .alert)
     SaveAlertHandle.set(alertController)
@@ -106,6 +102,8 @@ extension UIViewController {
    @param completion Called after the spinner has been hidden.
    */
   func hideSpinner(_ completion: (() -> Void)?) {
+    ZmFunc().dlog("extension UIViewController - hideSpinner")
+    
     if let controller = SaveAlertHandle.get() {
       SaveAlertHandle.clear()
       controller.dismiss(animated: true, completion: completion)

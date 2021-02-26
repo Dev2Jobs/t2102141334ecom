@@ -7,6 +7,7 @@
 import UIKit
 import Firebase
 
+
 //@objc(SignUp1View)
 class SignUp1View: UIViewController {
 
@@ -55,11 +56,15 @@ class SignUp1View: UIViewController {
         ZmFunc().dlog(textFieldPassword.text!)
         ZmFunc().dlog(textFieldPassword2.text!)
     
+        GFB_createUser(email: textFieldEmail.text!, password: textFieldPassword.text!)
+
+/*
         Auth.auth().createUser(withEmail: textFieldEmail.text!, password: textFieldPassword.text!) { authResult, error in
           guard error == nil else { return self.displayError(error) }
 //          self.delegate?.loginDidOccur()
         }
-        /*
+*/
+ /*
 //        guard let strongSelf = self else { return }
         
         showTextInputPrompt(withMessage: "Email:") {  [weak self] userPressedOK, email in
@@ -92,7 +97,7 @@ class SignUp1View: UIViewController {
           
             // [END create_user]
         }
-            */
+*/
 	}
 
 	@IBAction func actionTerms(_ sender: Any) {
@@ -108,4 +113,20 @@ class SignUp1View: UIViewController {
 		print(#function)
 		dismiss(animated: true)
 	}
+    
+    // MARK: - Firebase 🔥
+    
+    private func GFB_login(with email: String, password: String) {
+      Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        guard error == nil else { return self.displayError(error) }
+//        self.delegate?.loginDidOccur()
+      }
+    }
+
+    private func GFB_createUser(email: String, password: String) {
+      Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        guard error == nil else { return self.displayError(error) }
+//        self.delegate?.loginDidOccur()
+      }
+    }
 }
