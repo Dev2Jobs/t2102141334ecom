@@ -5,7 +5,7 @@
 import UIKit
 import SDWebImage
 import Firebase
-import FirebaseUI
+//import FirebaseUI
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewReviewViewControllerDelegate {
 
@@ -179,6 +179,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
   }
 
 }
+
 
 class RestaurantTitleView: UIView {
 

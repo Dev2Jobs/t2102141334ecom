@@ -48,6 +48,22 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 	@IBAction func actionHideShowPassword(_ sender: Any) {
         ZmFunc().dlog("Login1View - actionHideShowPassword")
 
+//        guard let reference = restaurantReference else { return }
+        guard 1 != 1 else {
+            ZmFunc().dlog("@@@@@@@@")
+            
+//            Zm_FB_FS().set_exam_db_all()
+            Zm_FB_FS().get_exam_db_all()
+            
+            ZmFunc().dlog("*********************************")
+            print("Zm_FB_FS().restaurants[18].name -- \(Zm_FB_FS().restaurants[18].name)")
+            
+            return
+        }
+        
+        ///////////////////////////////////////////////////////
+        ZmFunc().dlog("###########")
+        
 		buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
 		textFieldPassword.isSecureTextEntry = !buttonHideShowPassword.isSelected
 	}
@@ -72,7 +88,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
         
         move_sign(1)
 	}
-    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
     func move_sign(_ temp_num: Int) {
         if ( 1 == temp_num ) {
             let signUp1View = SignUp1View()

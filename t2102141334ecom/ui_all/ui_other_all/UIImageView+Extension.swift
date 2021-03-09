@@ -43,7 +43,8 @@ extension UIImageView {
 //        let url = URL(string: String(format: "https://relatedcode.com/pics/\(topic)/\(subtopic)/%02d.jpg", index+1))
         let url = URL(string: String(format:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(index).png"))
         
-        ZmFunc().dlog("Firebase - load_im \(index) - \(url)")
+        let temp_str = String(format:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(index).png")
+        ZmFunc().dlog("Kingfisher - load_im \(index) - \(temp_str)")
 
         let size = CGSize(width: 1, height: 1)
         let placeholder = UIGraphicsImageRenderer(size: size).image { rendererContext in

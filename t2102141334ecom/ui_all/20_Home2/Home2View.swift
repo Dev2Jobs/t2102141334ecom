@@ -5,6 +5,8 @@
 //
 
 import UIKit
+import Firebase
+//import FirebaseFirestoreSwift
 
 
 class Home2View: UIViewController {
@@ -24,11 +26,16 @@ class Home2View: UIViewController {
 	private var categories: [String] = []
 	private var products: [[String: String]] = []
 
+    private var documents: [DocumentSnapshot] = []
+    var restaurants: [Restaurant] = []
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
+        print("Home2View - viewDidLoad")
 
 		super.viewDidLoad()
 
+        self.get_exam_db_all()
+        
 		navigationItem.leftBarButtonItem = UIBarButtonItem(customView: viewTitle)
 		navigationItem.rightBarButtonItem = UIBarButtonItem(customView: viewProfile)
 
@@ -50,6 +57,8 @@ class Home2View: UIViewController {
 		}
 
 		loadData()
+        
+        self.listenDocument()
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +72,159 @@ class Home2View: UIViewController {
 
 	// MARK: - Data methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func loadData() {
+    func listenDocument() {
+        ZmFunc().dlog("Home2View - listenDocument")
+            // [START listen_document]
+        
+        Firestore.firestore().collection("restaurants").addSnapshotListener { documentSnapshot, error in
+//        Firestore.firestore().collection("restaurants").document("").addSnapshotListener { documentSnapshot, error in
+            guard documentSnapshot != nil else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+//            guard let document = documentSnapshot else {
+//                print("Error fetching document: \(error!)")
+//                return
+//            }
+                    
+//            guard let data = document.data() else {
+//                print("Document data was empty.")
+//                return
+//            }
+//            print("Current data: \(data)")
+            self.get_exam_db_all()
+        }
+            // [END listen_document]
+    }
+    
+    func get_exam_db_all() {
+        ZmFunc().dlog("Home2View - get_exam_db_all")
+        
+        Firestore.firestore().collection("restaurants").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                return
+            }
+
+            var ii:Int = 0
+            
+            for document in querySnapshot!.documents {
+//                print("\(ii) ___ \(document.documentID) => \(document.data())")
+                let result = Result {
+                      try document.data(as: Restaurant.self)
+                }
+                    
+                switch result {
+                    case .success(let restaurant):
+                        if let restaurant = restaurant {
+                            self.restaurants.insert(restaurant, at: ii)
+                            print("restaurants[\(ii)].name_______: \(self.restaurants[ii].name)")
+                            // A `City` value was successfully initialized from the DocumentSnapshot.
+//                            print("restaurant: \(restaurant)")
+                        } else {
+                            // A nil value was successfully initialized from the DocumentSnapshot,
+                            // or the DocumentSnapshot was nil.
+                            print("Document does not exist")
+                        }
+                    case .failure(let error):
+                        // A `City` value could not be initialized from the DocumentSnapshot.
+                        print("Error decoding restaurant: \(error)")
+                }
+                ii += 1
+            }
+            self.refresh_all()
+        }
+    }
+    
+    func loadData() {
+        print("Home2View - loadData")
+        
+        imageView.load_im(1)
+        labelTitle.text = "AppDesignKit"
+        imageViewProfile.load_im(1)
+
+        categories.removeAll()
+        products.removeAll()
+
+        categories.append("Shoes")
+        categories.append("Shirts")
+        categories.append("Watches")
+        categories.append("Jeans")
+
+//        var dict1: [String: String] = [:]
+//        dict1["title"] = "Suede Chukka Boots"
+//        dict1["brand"] = "River Island"
+//        dict1["price"] = "$79.00"
+//        dict1["originalPrice"] = ""
+//        products.append(dict1)
+//
+//        var dict6: [String: String] = [:]
+//        dict6["title"] = "Jodhpur Boots"
+//        dict6["brand"] = "House of Versace"
+//        dict6["price"] = "$75"
+//        dict6["originalPrice"] = "$97"
+//        products.append(dict6)
+        
+//        Zm_FB_FS().get_exam_db_all(SC_H2V)
+//        Zm_FB_FS().get_exam_db_all(2)
+        
+//        db 데이터 로딩 딜레이로 늦게 가져온다
+        
+//        Zm_FB_FS().restaurants[0].name = "777ㅁㄴㅇㅁㄴㅇ"
+//        print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[0].name)")
+
+        for _ in 0 ..< 6 {
+//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
+            
+            var dict1: [String: String] = [:]
+//            dict1["title"] = Zm_FB_FS().restaurants[ii].name
+//            dict1["brand"] = Zm_FB_FS().restaurants[ii].city
+            
+            dict1["title"] = ""
+            dict1["brand"] = ""
+            dict1["price"] = ""
+            dict1["originalPrice"] = ""
+            products.append(dict1)
+        }
+
+        refreshCollectionViewSlider()
+        refreshCollectionViewCategories()
+        refreshCollectionViewDiscounts()
+    }
+    
+    func refresh_all() {
+        print("Home2View - refresh_all")
+        
+//        if nil == Zm_FB_FS().restaurants[0].name {
+//            print("Home2View - refresh_all - 22 - nil")
+//        }else {
+//            print("Home2View - refresh_all - 333")
+//        }
+        
+        for ii in 0 ..< 6 {
+//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
+            
+            var dict1: [String: String] = [:]
+//            dict1["title"] = Zm_FB_FS().restaurants[ii].name
+//            dict1["brand"] = Zm_FB_FS().restaurants[ii].city
+            
+//            dict1["title"] = "refresh_all t"
+//            dict1["brand"] = "refresh_all BB"
+            
+            dict1["title"] = restaurants[ii].name
+            dict1["brand"] = restaurants[ii].city
+            
+            dict1["price"] = "$79.00"
+            dict1["originalPrice"] = ""
+            products.insert(dict1, at: ii)
+        }
+        
+        refreshCollectionViewSlider()
+        refreshCollectionViewCategories()
+        refreshCollectionViewDiscounts()
+    }
+    
+    func loadData22() {
 
 //		imageView.sample("Ecommerce", "Bags", 5)
         imageView.load_im(1)

@@ -58,6 +58,7 @@
 		06609F8B25E8AEF1000809B2 /* Items7View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06609F5D25E8AEF1000809B2 /* Items7View.xib */; };
 		06609F8C25E8AEF1000809B2 /* Items7Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06609F5E25E8AEF1000809B2 /* Items7Cell1.xib */; };
 		06609F8D25E8AEF1000809B2 /* Items7Cell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06609F5F25E8AEF1000809B2 /* Items7Cell1.swift */; };
+		06729FEE25F238B700203D71 /* Zm_FB_FS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06729FED25F238B700203D71 /* Zm_FB_FS.swift */; };
 		0673E2A125DCDAD600C229C1 /* Viewdsfsd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0673E2A025DCDAD600C229C1 /* Viewdsfsd.xib */; };
 		0678A9AE25DACCFB003412F9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678A9A825DACCFB003412F9 /* UIViewController.swift */; };
 		0686A21B25E3A131002BB4F9 /* BaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0686A1EE25E3A131002BB4F9 /* BaseView.xib */; };
@@ -97,6 +98,15 @@
 		0686A23D25E3A132002BB4F9 /* Home3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686A21825E3A131002BB4F9 /* Home3View.swift */; };
 		0686A23E25E3A132002BB4F9 /* Home3Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0686A21925E3A131002BB4F9 /* Home3Cell1.xib */; };
 		0686A23F25E3A132002BB4F9 /* Home3Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0686A21A25E3A131002BB4F9 /* Home3Cell2.xib */; };
+		068E4E1A25EF681C0035C674 /* LocalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E0A25EF681C0035C674 /* LocalCollection.swift */; };
+		068E4E1B25EF681C0035C674 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E0B25EF681C0035C674 /* RestaurantDetailViewController.swift */; };
+		068E4E1D25EF681C0035C674 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E0D25EF681C0035C674 /* StarsView.swift */; };
+		068E4E2025EF681C0035C674 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E4E1125EF681C0035C674 /* Main.storyboard */; };
+		068E4E2125EF681C0035C674 /* pizza-monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 068E4E1325EF681C0035C674 /* pizza-monster.png */; };
+		068E4E2225EF681C0035C674 /* NewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E1425EF681C0035C674 /* NewReviewViewController.swift */; };
+		068E4E2325EF681C0035C674 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E1525EF681C0035C674 /* FiltersViewController.swift */; };
+		068E4E2625EF681C0035C674 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E1825EF681C0035C674 /* RestaurantsTableViewController.swift */; };
+		068E4E2725EF681C0035C674 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E4E1925EF681C0035C674 /* Restaurant.swift */; };
 		06B8C85525D8EF920080CFEF /* t_im_all in Resources */ = {isa = PBXBuildFile; fileRef = 06B8C85325D8EF920080CFEF /* t_im_all */; };
 		06B8C86525D8FC8F0080CFEF /* ZmFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8C86425D8FC8F0080CFEF /* ZmFunc.swift */; };
 		06B8C86825D8FC920080CFEF /* ZmVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8C86725D8FC920080CFEF /* ZmVar.swift */; };
@@ -157,6 +167,7 @@
 		06609F5D25E8AEF1000809B2 /* Items7View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Items7View.xib; sourceTree = "<group>"; };
 		06609F5E25E8AEF1000809B2 /* Items7Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Items7Cell1.xib; sourceTree = "<group>"; };
 		06609F5F25E8AEF1000809B2 /* Items7Cell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items7Cell1.swift; sourceTree = "<group>"; };
+		06729FED25F238B700203D71 /* Zm_FB_FS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zm_FB_FS.swift; sourceTree = "<group>"; };
 		0673E2A025DCDAD600C229C1 /* Viewdsfsd.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Viewdsfsd.xib; sourceTree = "<group>"; };
 		0678A9A825DACCFB003412F9 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0686A1EE25E3A131002BB4F9 /* BaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseView.xib; sourceTree = "<group>"; };
@@ -196,6 +207,15 @@
 		0686A21825E3A131002BB4F9 /* Home3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home3View.swift; sourceTree = "<group>"; };
 		0686A21925E3A131002BB4F9 /* Home3Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home3Cell1.xib; sourceTree = "<group>"; };
 		0686A21A25E3A131002BB4F9 /* Home3Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home3Cell2.xib; sourceTree = "<group>"; };
+		068E4E0A25EF681C0035C674 /* LocalCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalCollection.swift; sourceTree = "<group>"; };
+		068E4E0B25EF681C0035C674 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		068E4E0D25EF681C0035C674 /* StarsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		068E4E1225EF681C0035C674 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		068E4E1325EF681C0035C674 /* pizza-monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza-monster.png"; sourceTree = "<group>"; };
+		068E4E1425EF681C0035C674 /* NewReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReviewViewController.swift; sourceTree = "<group>"; };
+		068E4E1525EF681C0035C674 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		068E4E1825EF681C0035C674 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		068E4E1925EF681C0035C674 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		06B8C85325D8EF920080CFEF /* t_im_all */ = {isa = PBXFileReference; lastKnownFileType = folder; path = t_im_all; sourceTree = "<group>"; };
 		06B8C86425D8FC8F0080CFEF /* ZmFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZmFunc.swift; sourceTree = "<group>"; };
 		06B8C86725D8FC920080CFEF /* ZmVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZmVar.swift; sourceTree = "<group>"; };
@@ -237,6 +257,7 @@
 		061CF8AF25D8DFD3001BACCB /* t2102141334ecom */ = {
 			isa = PBXGroup;
 			children = (
+				068E4E0925EF681C0035C674 /* FirestoreExample */,
 				0686A1EC25E3A131002BB4F9 /* ui_all */,
 				0678A9A225DACCFB003412F9 /* auth_all */,
 				06B8C86B25D8FCA30080CFEF /* zm_all */,
@@ -510,11 +531,28 @@
 			path = 21_Home3;
 			sourceTree = "<group>";
 		};
+		068E4E0925EF681C0035C674 /* FirestoreExample */ = {
+			isa = PBXGroup;
+			children = (
+				068E4E0A25EF681C0035C674 /* LocalCollection.swift */,
+				068E4E0B25EF681C0035C674 /* RestaurantDetailViewController.swift */,
+				068E4E0D25EF681C0035C674 /* StarsView.swift */,
+				068E4E1125EF681C0035C674 /* Main.storyboard */,
+				068E4E1325EF681C0035C674 /* pizza-monster.png */,
+				068E4E1425EF681C0035C674 /* NewReviewViewController.swift */,
+				068E4E1525EF681C0035C674 /* FiltersViewController.swift */,
+				068E4E1825EF681C0035C674 /* RestaurantsTableViewController.swift */,
+				068E4E1925EF681C0035C674 /* Restaurant.swift */,
+			);
+			path = FirestoreExample;
+			sourceTree = "<group>";
+		};
 		06B8C86B25D8FCA30080CFEF /* zm_all */ = {
 			isa = PBXGroup;
 			children = (
 				06B8C86725D8FC920080CFEF /* ZmVar.swift */,
 				06B8C86425D8FC8F0080CFEF /* ZmFunc.swift */,
+				06729FED25F238B700203D71 /* Zm_FB_FS.swift */,
 			);
 			path = zm_all;
 			sourceTree = "<group>";
@@ -600,6 +638,7 @@
 				06609F7325E8AEF1000809B2 /* Items5View.xib in Resources */,
 				06609F6825E8AEF1000809B2 /* Categories3View.xib in Resources */,
 				0686A22725E3A131002BB4F9 /* signup1_facebook@2x.png in Resources */,
+				068E4E2025EF681C0035C674 /* Main.storyboard in Resources */,
 				06609F6C25E8AEF1000809B2 /* Categories3Cell1.xib in Resources */,
 				0686A23525E3A131002BB4F9 /* Home2Cell1.xib in Resources */,
 				0686A22525E3A131002BB4F9 /* Login1View.xib in Resources */,
@@ -620,6 +659,7 @@
 				0686A23A25E3A132002BB4F9 /* Home3View.xib in Resources */,
 				06609F6E25E8AEF1000809B2 /* Items4View.xib in Resources */,
 				0686A21E25E3A131002BB4F9 /* Home1Cell2.xib in Resources */,
+				068E4E2125EF681C0035C674 /* pizza-monster.png in Resources */,
 				06609F6425E8AEF1000809B2 /* Items3Cell1.xib in Resources */,
 				06609F8B25E8AEF1000809B2 /* Items7View.xib in Resources */,
 				06609F8225E8AEF1000809B2 /* Items10View.xib in Resources */,
@@ -706,6 +746,8 @@
 				0686A23C25E3A132002BB4F9 /* Home3Cell1.swift in Sources */,
 				06609F6F25E8AEF1000809B2 /* Items4Cell1.swift in Sources */,
 				0678A9AE25DACCFB003412F9 /* UIViewController.swift in Sources */,
+				068E4E2325EF681C0035C674 /* FiltersViewController.swift in Sources */,
+				06729FEE25F238B700203D71 /* Zm_FB_FS.swift in Sources */,
 				06609F8325E8AEF1000809B2 /* Items10Cell2.swift in Sources */,
 				0686A21C25E3A131002BB4F9 /* BaseView.swift in Sources */,
 				06609F7A25E8AEF1000809B2 /* Items8Cell1.swift in Sources */,
@@ -714,6 +756,7 @@
 				06609F8525E8AEF1000809B2 /* Items10Cell1.swift in Sources */,
 				06609F6A25E8AEF1000809B2 /* Categories3Cell2.swift in Sources */,
 				06609F6325E8AEF1000809B2 /* Categories2View.swift in Sources */,
+				068E4E1B25EF681C0035C674 /* RestaurantDetailViewController.swift in Sources */,
 				0686A22C25E3A131002BB4F9 /* NavController.swift in Sources */,
 				0686A22D25E3A131002BB4F9 /* AppColor.swift in Sources */,
 				06609F8625E8AEF1000809B2 /* Items6Cell1.swift in Sources */,
@@ -724,6 +767,8 @@
 				061CF8B125D8DFD3001BACCB /* AppDelegate.swift in Sources */,
 				06609F7525E8AEF1000809B2 /* Items5View.swift in Sources */,
 				06609F6525E8AEF1000809B2 /* Items3Cell1.swift in Sources */,
+				068E4E1A25EF681C0035C674 /* LocalCollection.swift in Sources */,
+				068E4E1D25EF681C0035C674 /* StarsView.swift in Sources */,
 				06609F7125E8AEF1000809B2 /* Items4View.swift in Sources */,
 				06609F8725E8AEF1000809B2 /* Items6View.swift in Sources */,
 				06609F7925E8AEF1000809B2 /* Items8View.swift in Sources */,
@@ -733,10 +778,13 @@
 				06609F6725E8AEF1000809B2 /* Items3View.swift in Sources */,
 				06609F7725E8AEF1000809B2 /* Items5Cell2.swift in Sources */,
 				06609F7625E8AEF1000809B2 /* Items5Cell1.swift in Sources */,
+				068E4E2625EF681C0035C674 /* RestaurantsTableViewController.swift in Sources */,
 				06609F6B25E8AEF1000809B2 /* Categories3View.swift in Sources */,
 				0686A22A25E3A131002BB4F9 /* UIImageView+Extension.swift in Sources */,
 				0686A22E25E3A131002BB4F9 /* UITextField+Extension.swift in Sources */,
+				068E4E2225EF681C0035C674 /* NewReviewViewController.swift in Sources */,
 				06609F8D25E8AEF1000809B2 /* Items7Cell1.swift in Sources */,
+				068E4E2725EF681C0035C674 /* Restaurant.swift in Sources */,
 				0686A22425E3A131002BB4F9 /* Login1View.swift in Sources */,
 				0686A23425E3A131002BB4F9 /* Home2Layout.swift in Sources */,
 				0686A22B25E3A131002BB4F9 /* UIView+Extension.swift in Sources */,
@@ -752,6 +800,14 @@
 				061CF8BC25D8DFD4001BACCB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		068E4E1125EF681C0035C674 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				068E4E1225EF681C0035C674 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

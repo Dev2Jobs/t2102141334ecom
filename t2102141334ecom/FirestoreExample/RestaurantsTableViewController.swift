@@ -5,7 +5,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestoreSwift
-import FirebaseUI
+//import FirebaseUI
 import SDWebImage
 
 func priceString(from price: Int) -> String {
@@ -136,12 +136,12 @@ class RestaurantsTableViewController: UIViewController, UITableViewDataSource, U
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let auth = FUIAuth.defaultAuthUI()!
-    if auth.auth?.currentUser == nil {
-      let emailAuthProvider = FUIEmailAuth()
-      auth.providers = [emailAuthProvider]
-      present(auth.authViewController(), animated: true, completion: nil)
-    }
+//    let auth = FUIAuth.defaultAuthUI()!
+//    if auth.auth?.currentUser == nil {
+//      let emailAuthProvider = FUIEmailAuth()
+//      auth.providers = [emailAuthProvider]
+//      present(auth.authViewController(), animated: true, completion: nil)
+//    }
   }
 
   override func viewWillDisappear(_ animated: Bool) {

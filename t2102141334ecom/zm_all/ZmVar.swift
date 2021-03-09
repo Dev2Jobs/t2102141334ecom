@@ -23,6 +23,13 @@ class ZmVar {
         
         return staticInstance.instance!
     }
+    
+    enum SceneNum {
+        case SC_H1V
+        case SC_H2V
+        case SC_H3V
+        case SC_L1V
+    }
 }
 
 // ZmVar.sharedInstance().globalstring

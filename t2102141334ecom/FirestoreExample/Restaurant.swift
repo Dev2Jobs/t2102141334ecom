@@ -5,6 +5,45 @@
 import Firebase
 import FirebaseFirestoreSwift
 
+struct tttsdfsdf {
+
+  var name: String?
+  var category: String? // Could become an enum
+  var city: String?
+  var price: Int? // from 1-3; could also be an enum
+  var ratingCount: Int? // numRatings
+  var averageRating: Float?
+}
+
+struct tttsdfsdf222 {
+
+  var name: String = ""
+  var category: String = "" // Could become an enum
+  var city: String = ""
+  var price: Int = 1 // from 1-3; could also be an enum
+  var ratingCount: Int = 2 // numRatings
+  var averageRating: Float = 3
+}
+
+struct tttsdfsdf333 {
+
+  var name: String
+  var category: String // Could become an enum
+  var city: String
+  var price: Int // from 1-3; could also be an enum
+  var ratingCount: Int // numRatings
+  var averageRating: Float
+
+    init() {
+        name = ""
+        category = ""
+        city = ""
+        price = 1
+        ratingCount = 2
+        averageRating = 3
+    }
+}
+
 struct Restaurant: Codable {
 
   var name: String
