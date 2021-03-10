@@ -163,20 +163,24 @@ class RestaurantsTableViewController: UIViewController, UITableViewDataSource, U
       let city = cities[Int(arc4random_uniform(UInt32(cities.count)))]
       let price = Int(arc4random_uniform(3)) + 1
       let photo = Restaurant.imageURL(forName: name)
+        
+//        let im_storage = "food_s/food_\(ii%3+1).png"
+        let im_storage = "food_s/food_1.png"
 
       // Basic writes
 
       let collection = Firestore.firestore().collection("restaurants")
 
-      let restaurant = Restaurant(
-        name: name,
-        category: category,
-        city: city,
-        price: price,
-        ratingCount: 10,
-        averageRating: 0,
-        photo: photo
-      )
+        let restaurant = Restaurant(
+            name: name,
+            category: category,
+            city: city,
+            price: price,
+            ratingCount: 10,
+            averageRating: 0,
+            photo: photo,
+            im_storage: im_storage
+        )
 
       let restaurantRef = collection.document()
       do {

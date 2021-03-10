@@ -36,6 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        baseView = BaseView(nibName: "BaseView", bundle: nil)
 //        let navController = NavigationController(rootViewController: baseView)
         
+        for ii in 0 ..< 20 {
+            ZmVar.sh().rt_im_st[ii] = ""
+//            ZmVar.sh().rt_im_st[ii] = "food_s/food_3.png" // food_s/food_\(ii%3+1).png
+        }
+        
         Login1View = t2102141334ecom.Login1View(nibName: "Login1View", bundle: nil)
         let navController = NavigationController(rootViewController: Login1View)
         

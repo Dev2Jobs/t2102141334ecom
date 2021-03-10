@@ -11,9 +11,17 @@ class ZmVar {
 //    싱글톤 객체를 이용하여 접근할 전역 변수 선언
     public var globalstring:String = "gl test"
     
+    public var rt_im_st:[String]  = ["","","","","","","","","","","","","","","","","","","",""]
+    
     struct staticInstance {
         static var instance:ZmVar?
     }
+    
+//    init(_ index: Int) {
+//        for ii in 0 ..< 20 {
+//            rt_im_st[ii] = "food_s/food_3.png" // food_s/food_\(ii%3+1).png
+//        }
+//    }
     
 //    싱글톤 객체를 반환하는 함수 sharedInstance
     class func sh()->ZmVar {

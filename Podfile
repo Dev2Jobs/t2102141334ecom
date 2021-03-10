@@ -39,10 +39,11 @@ target 't2102141334ecom' do
   pod 'NVActivityIndicatorView', '4.8.0'
   
   pod 'Firebase/Auth'
-#      pod 'Firebase/Database'
-#      pod 'Firebase/Storage'
-
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
+#      pod 'Firebase/Database'
+
 # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
 

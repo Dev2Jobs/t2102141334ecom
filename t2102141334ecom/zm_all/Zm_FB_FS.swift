@@ -69,6 +69,7 @@ class Zm_FB_FS: UIViewController {
             }
 
             var ii:Int = 0
+            var temp_num:Int = -1
             
             for document in querySnapshot!.documents {
 //                print("\(ii) ___ \(document.documentID) => \(document.data())")
@@ -94,7 +95,10 @@ class Zm_FB_FS: UIViewController {
                 }
                 ii += 1
             }
-            Home2View().refresh_all()
+            temp_num = querySnapshot!.documents.count
+            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - documents.count: \(temp_num)")
+            
+            Home2View().refresh_all(querySnapshot!.documents.count)
         }
     }
     
@@ -425,7 +429,8 @@ class Zm_FB_FS: UIViewController {
 
         var temp_num:Int = 0
         
-        for _ in 0 ..< 20 {
+//        for _ in 0 ..< 20 {
+        for ii in 0 ..< 20 {
             let randomIndexes = (Int(arc4random_uniform(UInt32(words.count))),
                            Int(arc4random_uniform(UInt32(words.count))))
             let name = words[randomIndexes.0] + " " + words[randomIndexes.1]
@@ -433,6 +438,8 @@ class Zm_FB_FS: UIViewController {
             let city = cities[Int(arc4random_uniform(UInt32(cities.count)))]
             let price = Int(arc4random_uniform(3)) + 1
             let photo = Restaurant.imageURL(forName: name)
+//            let photo = "food_s/food_\(ii+1).png"
+            let im_storage = "food_s/food_\(ii%3+1).png"
 
             temp_num = temp_num+1
             ZmFunc().dlog("__\(temp_num)__ randomIndexes \(randomIndexes) - name \(name) - category \(category) - city \(city) - price \(price) - words.count \(words.count)")
@@ -448,7 +455,8 @@ class Zm_FB_FS: UIViewController {
                 price: price,
                 ratingCount: 10,
                 averageRating: 0,
-                photo: photo
+                photo: photo,
+                im_storage: im_storage
             )
 
             let restaurantRef = collection.document()

@@ -22,6 +22,10 @@ class Home2View: UIViewController {
 	@IBOutlet var collectionViewDiscounts: UICollectionView!
 	@IBOutlet var layoutConstraintDiscountsHeight: NSLayoutConstraint!
 
+    var num_col_v_slr: Int = 10
+    var num_col_v_ctg: Int = 4
+    var num_col_v_dis: Int = 4 // 6 // 0
+    
 	private var sliderVisibleIndex = IndexPath(item: 0, section: 0)
 	private var categories: [String] = []
 	private var products: [[String: String]] = []
@@ -107,6 +111,7 @@ class Home2View: UIViewController {
             }
 
             var ii:Int = 0
+            var temp_num:Int = -1
             
             for document in querySnapshot!.documents {
 //                print("\(ii) ___ \(document.documentID) => \(document.data())")
@@ -118,7 +123,8 @@ class Home2View: UIViewController {
                     case .success(let restaurant):
                         if let restaurant = restaurant {
                             self.restaurants.insert(restaurant, at: ii)
-                            print("restaurants[\(ii)].name_______: \(self.restaurants[ii].name)")
+                            ZmVar.sh().rt_im_st[ii] = self.restaurants[ii].im_storage
+                            print("restaurants[\(ii)].name : \(self.restaurants[ii].name) ___ ZmVar.sh().rt_im_st[\(ii)]: \(ZmVar.sh().rt_im_st[ii])")
                             // A `City` value was successfully initialized from the DocumentSnapshot.
 //                            print("restaurant: \(restaurant)")
                         } else {
@@ -132,11 +138,67 @@ class Home2View: UIViewController {
                 }
                 ii += 1
             }
-            self.refresh_all()
+            temp_num = querySnapshot!.documents.count
+            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - documents.count: \(temp_num)")
+            
+            self.refresh_all(querySnapshot!.documents.count)
         }
     }
     
     func loadData() {
+        print("Home2View - loadData")
+        
+        imageView.load_im(1)
+        labelTitle.text = "AppDesignKit"
+        imageViewProfile.load_im(1)
+
+        categories.removeAll()
+        products.removeAll()
+
+        categories.append("Shoes")
+        categories.append("Shirts")
+        categories.append("Watches")
+        categories.append("Jeans")
+
+        for _ in 0 ..< num_col_v_dis {
+            var dict1: [String: String] = [:]
+            dict1["title"] = ""
+            dict1["brand"] = ""
+            dict1["price"] = ""
+            dict1["originalPrice"] = ""
+            products.append(dict1)
+        }
+
+        refresh_view_all()
+    }
+    
+    func refresh_all(_ cur_num: Int) {
+        print("Home2View - refresh_all")
+        
+        num_col_v_dis = cur_num
+        for ii in 0 ..< num_col_v_dis {
+//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
+            
+            var dict1: [String: String] = [:]
+            
+            dict1["title"] = restaurants[ii].name
+            dict1["brand"] = restaurants[ii].city
+            dict1["price"] = "$"+String(restaurants[ii].price*4)+".00"
+            dict1["originalPrice"] = String(restaurants[ii].price)
+            
+            products.insert(dict1, at: ii)
+        }
+        
+        refresh_view_all()
+    }
+    
+    func refresh_view_all() {
+        refreshCollectionViewSlider()
+        refreshCollectionViewCategories()
+        refreshCollectionViewDiscounts()
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    func loadData6666() {
         print("Home2View - loadData")
         
         imageView.load_im(1)
@@ -173,7 +235,7 @@ class Home2View: UIViewController {
 //        Zm_FB_FS().restaurants[0].name = "777ㅁㄴㅇㅁㄴㅇ"
 //        print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[0].name)")
 
-        for _ in 0 ..< 6 {
+        for _ in 0 ..< num_col_v_dis {
 //            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
             
             var dict1: [String: String] = [:]
@@ -187,41 +249,7 @@ class Home2View: UIViewController {
             products.append(dict1)
         }
 
-        refreshCollectionViewSlider()
-        refreshCollectionViewCategories()
-        refreshCollectionViewDiscounts()
-    }
-    
-    func refresh_all() {
-        print("Home2View - refresh_all")
-        
-//        if nil == Zm_FB_FS().restaurants[0].name {
-//            print("Home2View - refresh_all - 22 - nil")
-//        }else {
-//            print("Home2View - refresh_all - 333")
-//        }
-        
-        for ii in 0 ..< 6 {
-//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
-            
-            var dict1: [String: String] = [:]
-//            dict1["title"] = Zm_FB_FS().restaurants[ii].name
-//            dict1["brand"] = Zm_FB_FS().restaurants[ii].city
-            
-//            dict1["title"] = "refresh_all t"
-//            dict1["brand"] = "refresh_all BB"
-            
-            dict1["title"] = restaurants[ii].name
-            dict1["brand"] = restaurants[ii].city
-            
-            dict1["price"] = "$79.00"
-            dict1["originalPrice"] = ""
-            products.insert(dict1, at: ii)
-        }
-        
-        refreshCollectionViewSlider()
-        refreshCollectionViewCategories()
-        refreshCollectionViewDiscounts()
+        refresh_view_all()
     }
     
     func loadData22() {
@@ -343,22 +371,25 @@ extension Home2View: UICollectionViewDataSource {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
+        print("Home2View - UICollectionViewDataSource - numberOfSections")
 
 		return 1
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Home2View - UICollectionViewDataSource - numberOfItemsInSection")
 
-		if (collectionView == collectionViewSlider)		{ return 10 }
-		if (collectionView == collectionViewCategories)	{ return 4 }
-		if (collectionView == collectionViewDiscounts)	{ return 6 }
+		if (collectionView == collectionViewSlider)		{ return num_col_v_slr }
+		if (collectionView == collectionViewCategories)	{ return num_col_v_ctg }
+        if (collectionView == collectionViewDiscounts)    { return num_col_v_dis }
 
 		return 0
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("Home2View - UICollectionViewDataSource - cellForItemAt")
 
 		if (collectionView == collectionViewSlider) {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Home2Cell1", for: indexPath) as! Home2Cell1
@@ -404,6 +435,7 @@ extension Home2View: UICollectionViewDelegateFlowLayout {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("Home2View - UICollectionViewDelegateFlowLayout - sizeForItemAt")
 
 		let width = collectionView.frame.size.width
 		let height = collectionView.frame.size.height
@@ -418,6 +450,7 @@ extension Home2View: UICollectionViewDelegateFlowLayout {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        print("Home2View - UICollectionViewDelegateFlowLayout - minimumLineSpacingForSectionAt")
 
 		if (collectionView == collectionViewSlider) { return 15 }
 		if (collectionView == collectionViewCategories) { return 15 }
@@ -428,6 +461,7 @@ extension Home2View: UICollectionViewDelegateFlowLayout {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        print("Home2View - UICollectionViewDelegateFlowLayout - minimumInteritemSpacingForSectionAt")
 
 		if (collectionView == collectionViewSlider) { return 15 }
 		if (collectionView == collectionViewCategories) { return 15 }
@@ -438,6 +472,7 @@ extension Home2View: UICollectionViewDelegateFlowLayout {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        print("Home2View - UICollectionViewDelegateFlowLayout - insetForSectionAt")
 
 		if (collectionView == collectionViewSlider) { return UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50) }
 		if (collectionView == collectionViewCategories) { return UIEdgeInsets.zero }
@@ -453,6 +488,6 @@ extension Home2View: UIScrollViewDelegate {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
+        print("Home2View - UIScrollViewDelegate - scrollViewDidEndDecelerating")
 	}
 }

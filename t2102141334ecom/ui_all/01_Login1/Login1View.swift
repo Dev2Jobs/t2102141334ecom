@@ -56,7 +56,6 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
             Zm_FB_FS().get_exam_db_all()
             
             ZmFunc().dlog("*********************************")
-            print("Zm_FB_FS().restaurants[18].name -- \(Zm_FB_FS().restaurants[18].name)")
             
             return
         }

@@ -53,6 +53,7 @@ struct Restaurant: Codable {
   var ratingCount: Int // numRatings
   var averageRating: Float
   var photo: URL
+  var im_storage: String
 
   enum CodingKeys: String, CodingKey {
     case name
@@ -62,6 +63,7 @@ struct Restaurant: Codable {
     case ratingCount = "numRatings"
     case averageRating = "avgRating"
     case photo
+    case im_storage
   }
 
 }
