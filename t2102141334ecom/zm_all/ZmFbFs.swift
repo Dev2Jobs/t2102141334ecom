@@ -1,5 +1,5 @@
 //
-//  Zm_FB_FS.swift
+//  ZmFbFs.swift
 //  t2102141334ecom
 //
 //  Created by soul on 2021/03/05.
@@ -11,8 +11,8 @@ import FirebaseFirestoreSwift
 import SDWebImage
 
 
-//class Zm_FB_FS: UIViewController, UITableViewDataSource, UITableViewDelegate {
-class Zm_FB_FS: UIViewController {
+//class ZmFbFs: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ZmFbFs: UIViewController {
 
 //  @IBOutlet var tableView: UITableView!
 //  @IBOutlet var activeFiltersStackView: UIStackView!
@@ -60,7 +60,7 @@ class Zm_FB_FS: UIViewController {
 //    }
     
     func get_exam_db_all(_ cur_scene: Int) {
-        ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - cur_scene: \(cur_scene)")
+        ZmF().dlog("ZmFbFs - get_exam_db_all - cur_scene: \(cur_scene)")
         
         Firestore.firestore().collection("restaurants").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -96,14 +96,14 @@ class Zm_FB_FS: UIViewController {
                 ii += 1
             }
             temp_num = querySnapshot!.documents.count
-            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - documents.count: \(temp_num)")
+            ZmF().dlog("ZmFbFs - get_exam_db_all - documents.count: \(temp_num)")
             
             Home2View().refresh_all(querySnapshot!.documents.count)
         }
     }
     
     func get_exam_db_all() {
-        ZmFunc().dlog("Zm_FB_FS - get_exam_db_all")
+        ZmF().dlog("ZmFbFs - get_exam_db_all")
         
         Firestore.firestore().collection("restaurants").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -200,7 +200,7 @@ class Zm_FB_FS: UIViewController {
     }
         
     func get_exam_db_all333() {
-        ZmFunc().dlog("Zm_FB_FS - get_exam_db_all")
+        ZmF().dlog("ZmFbFs - get_exam_db_all")
         
 //        let collection = Firestore.firestore().collection("restaurants")
 //        let restaurantRef = collection.document()
@@ -230,15 +230,15 @@ class Zm_FB_FS: UIViewController {
     
 //    fileprivate func get_exam_db_all() -> [Restaurant] {
     func get_exam_db_all22() {
-        ZmFunc().dlog("Zm_FB_FS - get_exam_db_all")
+        ZmF().dlog("ZmFbFs - get_exam_db_all")
     
 //        guard let query = query else {
-//            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - 1")
+//            ZmF().dlog("ZmFbFs - get_exam_db_all - 1")
 //            return }
 //        stopObserving()
         
 //        guard query = baseQuery() else {
-//            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - 2")
+//            ZmF().dlog("ZmFbFs - get_exam_db_all - 2")
 //            return }
 
 //        let query = baseQuery()
@@ -286,7 +286,7 @@ class Zm_FB_FS: UIViewController {
   }
 
     fileprivate func observeQuery() {
-        ZmFunc().dlog("Zm_FB_FS - observeQuery")
+        ZmF().dlog("ZmFbFs - observeQuery")
     
         guard let query = query else { return }
         stopObserving()
@@ -332,13 +332,13 @@ class Zm_FB_FS: UIViewController {
 
     
     fileprivate func stopObserving() {
-        ZmFunc().dlog("Zm_FB_FS - stopObserving")
+        ZmF().dlog("ZmFbFs - stopObserving")
 
         listener?.remove()
     }
 
     fileprivate func baseQuery() -> Query {
-        ZmFunc().dlog("Zm_FB_FS - baseQuery")
+        ZmF().dlog("ZmFbFs - baseQuery")
 
         return Firestore.firestore().collection("restaurants").limit(to: 50)
     }
@@ -350,7 +350,7 @@ class Zm_FB_FS: UIViewController {
 //  }()
 
     override func viewDidLoad() {
-        ZmFunc().dlog("Zm_FB_FS - viewDidLoad")
+        ZmF().dlog("ZmFbFs - viewDidLoad")
     
         super.viewDidLoad()
 //    backgroundView.image = UIImage(named: "pizza-monster")!
@@ -385,7 +385,7 @@ class Zm_FB_FS: UIViewController {
 
   
     override func viewWillAppear(_ animated: Bool) {
-        ZmFunc().dlog("Zm_FB_FS - viewWillAppear")
+        ZmF().dlog("ZmFbFs - viewWillAppear")
         
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
@@ -393,25 +393,25 @@ class Zm_FB_FS: UIViewController {
     }
   
     override func viewDidAppear(_ animated: Bool) {
-        ZmFunc().dlog("Zm_FB_FS - viewDidAppear")
+        ZmF().dlog("ZmFbFs - viewDidAppear")
     
         super.viewDidAppear(animated)
         
 //    let auth = FUIAuth.defaultAuthUI()!
 //    if auth.auth?.currentUser == nil {
-//        ZmFunc().dlog("Zm_FB_FS - viewDidAppear - NO auth -> email create")
+//        ZmF().dlog("ZmFbFs - viewDidAppear - NO auth -> email create")
 //
 //      let emailAuthProvider = FUIEmailAuth()
 //      auth.providers = [emailAuthProvider]
 //      present(auth.authViewController(), animated: true, completion: nil)
 //    }else {
-//        ZmFunc().dlog("Zm_FB_FS - viewDidAppear - Already auth")
+//        ZmF().dlog("ZmFbFs - viewDidAppear - Already auth")
 //    }
     }
 
   
     override func viewWillDisappear(_ animated: Bool) {
-        ZmFunc().dlog("Zm_FB_FS - viewWillDisappear")
+        ZmF().dlog("ZmFbFs - viewWillDisappear")
     
         super.viewWillDisappear(animated)
         stopObserving()
@@ -419,7 +419,7 @@ class Zm_FB_FS: UIViewController {
 
 //    @IBAction func didTapPopulateButton(_ sender: Any) {
     func set_exam_db_all() {
-        ZmFunc().dlog("Zm_FB_FS - didTapPopulateButton")
+        ZmF().dlog("ZmFbFs - didTapPopulateButton")
 
     
         let words = ["Bar", "Fire", "Grill", "Drive Thru", "Place", "Best", "Spot", "Prime", "Eatin'"]
@@ -442,9 +442,9 @@ class Zm_FB_FS: UIViewController {
             let im_storage = "food_s/food_\(ii%3+1).png"
 
             temp_num = temp_num+1
-            ZmFunc().dlog("__\(temp_num)__ randomIndexes \(randomIndexes) - name \(name) - category \(category) - city \(city) - price \(price) - words.count \(words.count)")
+            ZmF().dlog("__\(temp_num)__ randomIndexes \(randomIndexes) - name \(name) - category \(category) - city \(city) - price \(price) - words.count \(words.count)")
        
-            ZmFunc().dlog("photo \(photo)")
+            ZmF().dlog("photo \(photo)")
         
       // Basic writes
             let collection = Firestore.firestore().collection("restaurants")
@@ -496,14 +496,14 @@ class Zm_FB_FS: UIViewController {
     }
   
 //    @IBAction func didTapClearButton(_ sender: Any) {
-//        ZmFunc().dlog("Zm_FB_FS - didTapClearButton")
+//        ZmF().dlog("ZmFbFs - didTapClearButton")
 //
 //    filters.filtersController.clearFilters()
 //    controller(filters.filtersController, didSelectCategory: nil, city: nil, price: nil, sortBy: nil)
 //  }
 //
 //  @IBAction func didTapFilterButton(_ sender: Any) {
-//    ZmFunc().dlog("Zm_FB_FS - didTapFilterButton")
+//    ZmF().dlog("ZmFbFs - didTapFilterButton")
 //
 //    present(filters.navigationController, animated: true, completion: nil)
 //  }
@@ -524,7 +524,7 @@ class Zm_FB_FS: UIViewController {
 
 //  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //
-//    ZmFunc().dlog("RestaurantsTableView - tableView - cellForRowAt")
+//    ZmF().dlog("RestaurantsTableView - tableView - cellForRowAt")
 //
 //    let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell",
 //                                             for: indexPath) as! RestaurantTableViewCell
@@ -535,7 +535,7 @@ class Zm_FB_FS: UIViewController {
 
 //  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //
-//    ZmFunc().dlog("RestaurantsTableView - tableView - numberOfRowsInSection - restaurants.count - \(restaurants.count)")
+//    ZmF().dlog("RestaurantsTableView - tableView - numberOfRowsInSection - restaurants.count - \(restaurants.count)")
 //
 //    return restaurants.count
 //  }
@@ -544,7 +544,7 @@ class Zm_FB_FS: UIViewController {
 /*
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    ZmFunc().dlog("RestaurantsTableView - tableView")
+    ZmF().dlog("RestaurantsTableView - tableView")
         
     tableView.deselectRow(at: indexPath, animated: true)
     let controller = RestaurantDetailViewController.fromStoryboard()
@@ -556,12 +556,12 @@ class Zm_FB_FS: UIViewController {
 */
 }
 
-//extension Zm_FB_FS: FiltersViewControllerDelegate {
-extension Zm_FB_FS {
+//extension ZmFbFs: FiltersViewControllerDelegate {
+extension ZmFbFs {
         
     func query(withCategory category: String?, city: String?, price: Int?, sortBy: String?) -> Query {
     
-        ZmFunc().dlog("Zm_FB_FS - query - \(category) - \(city) - \(price) - \(sortBy)")
+        ZmF().dlog("ZmFbFs - query - \(category) - \(city) - \(price) - \(sortBy)")
         
         var filtered = baseQuery()
 
@@ -600,7 +600,7 @@ extension Zm_FB_FS {
 //                  price: Int?,
 //                  sortBy: String?) {
 //
-//    ZmFunc().dlog("Zm_FB_FS - controller - \(category) - \(city) - \(price) - \(sortBy)")
+//    ZmF().dlog("ZmFbFs - controller - \(category) - \(city) - \(price) - \(sortBy)")
 //
 //    let filtered = query(withCategory: category, city: city, price: price, sortBy: sortBy)
 //
@@ -646,7 +646,7 @@ extension Zm_FB_FS {
 //  @IBOutlet private var priceLabel: UILabel!
 //
 //  func populate(restaurant: Restaurant) {
-//    ZmFunc().dlog("RestaurantTableViewCell - populate")
+//    ZmF().dlog("RestaurantTableViewCell - populate")
 //
 //    // Displaying data, part two
 //
@@ -661,7 +661,7 @@ extension Zm_FB_FS {
 //  }
 //
 //  override func prepareForReuse() {
-//    ZmFunc().dlog("RestaurantTableViewCell - prepareForReuse")
+//    ZmF().dlog("RestaurantTableViewCell - prepareForReuse")
 //
 //    super.prepareForReuse()
 //    thumbnailView.sd_cancelCurrentImageLoad()

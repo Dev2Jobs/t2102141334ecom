@@ -23,7 +23,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 
     
 	override func viewDidLoad() {
-        ZmFunc().dlog("Login1View - viewDidLoad")
+        ZmF().dlog("Login1View - viewDidLoad")
 
 		super.viewDidLoad()
         
@@ -37,7 +37,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 	// MARK: - Data methods
 
 	func loadData() {
-        ZmFunc().dlog("Login1View - loadData")
+        ZmF().dlog("Login1View - loadData")
 
 		labelTitle.text = "Welcome to\nAppDesignKit"
 		labelSubTitle.text = "An exciting place for the whole family to shop."
@@ -46,35 +46,35 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 	// MARK: - User actions
 
 	@IBAction func actionHideShowPassword(_ sender: Any) {
-        ZmFunc().dlog("Login1View - actionHideShowPassword")
+        ZmF().dlog("Login1View - actionHideShowPassword")
 
 //        guard let reference = restaurantReference else { return }
         guard 1 != 1 else {
-            ZmFunc().dlog("@@@@@@@@")
+            ZmF().dlog("@@@@@@@@")
             
-//            Zm_FB_FS().set_exam_db_all()
-            Zm_FB_FS().get_exam_db_all()
+//            ZmFbFs().set_exam_db_all()
+            ZmFbFs().get_exam_db_all()
             
-            ZmFunc().dlog("*********************************")
+            ZmF().dlog("*********************************")
             
             return
         }
         
         ///////////////////////////////////////////////////////
-        ZmFunc().dlog("###########")
+        ZmF().dlog("###########")
         
 		buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
 		textFieldPassword.isSecureTextEntry = !buttonHideShowPassword.isSelected
 	}
 
 	@IBAction func actionLogin(_ sender: Any) {
-        ZmFunc().dlog("Login1View - actionLogin")
+        ZmF().dlog("Login1View - actionLogin")
 
         GFB_login(with: textFieldEmail.text!, password: textFieldPassword.text!)
     }
 
 	@IBAction func actionForgotPassword(_ sender: Any) {
-        ZmFunc().dlog("Login1View - actionForgotPassword")
+        ZmF().dlog("Login1View - actionForgotPassword")
 
 //		print(#function)
 //		dismiss(animated: true)
@@ -83,7 +83,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 	}
 
 	@IBAction func actionSignUp(_ sender: Any) {
-        ZmFunc().dlog("Login1View - actionSignUp")
+        ZmF().dlog("Login1View - actionSignUp")
         
         move_sign(1)
 	}
@@ -151,7 +151,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
     // MARK: - Firebase 🔥
     
     private func GFB_login(with email: String, password: String) {
-        ZmFunc().dlog("Firebase - GFB_login")
+        ZmF().dlog("Firebase - GFB_login")
         
 //        self.showSpinner(<#(() -> Void)?#>)
         
@@ -176,11 +176,11 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
 //        self.delegate?.loginDidOccur()
             
 //            print(result)
-//            ZmFunc().dlog(result.debugDescription)
-//            ZmFunc().dlog(result!.description)
+//            ZmF().dlog(result.debugDescription)
+//            ZmF().dlog(result!.description)
             
 //            self.hideSpinner()
-            ZmFunc().dlog("Firebase - GFB_login - SUCCESS !!!")
+            ZmF().dlog("Firebase - GFB_login - SUCCESS !!!")
             
 //            NVActivityIndicatorPresenter.sharedInstance.setMessage("완료중...")
 //            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
@@ -194,7 +194,7 @@ class Login1View: UIViewController, NVActivityIndicatorViewable {
     }
 
     private func GFB_createUser(email: String, password: String) {
-        ZmFunc().dlog("Firebase - GFB_createUser")
+        ZmF().dlog("Firebase - GFB_createUser")
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
         guard error == nil else { return self.displayError(error) }

@@ -25,7 +25,7 @@ private class SaveAlertHandle {
 extension UIViewController {
     
     public func displayError(_ error: Error?, from function: StaticString = #function) {
-        ZmFunc().dlog("extension UIViewController - displayError")
+        ZmF().dlog("extension UIViewController - displayError")
         
       guard let error = error else { return }
       print("ⓧ Error in \(function): \(error.localizedDescription)")
@@ -44,7 +44,7 @@ extension UIViewController {
    @param message The message to display.
    */
   func showMessagePrompt(_ message: String) {
-    ZmFunc().dlog("extension UIViewController - showMessagePrompt")
+    ZmF().dlog("extension UIViewController - showMessagePrompt")
     
     let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -59,7 +59,7 @@ extension UIViewController {
    */
   func showTextInputPrompt(withMessage message: String,
                            completionBlock: @escaping ((Bool, String?) -> Void)) {
-    ZmFunc().dlog("extension UIViewController - showTextInputPrompt")
+    ZmF().dlog("extension UIViewController - showTextInputPrompt")
     
     let prompt = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
@@ -81,7 +81,7 @@ extension UIViewController {
    @param completion Called after the spinner has been hidden.
    */
   func showSpinner(_ completion: (() -> Void)?) {
-    ZmFunc().dlog("extension UIViewController - showSpinner")
+    ZmF().dlog("extension UIViewController - showSpinner")
     
     let alertController = UIAlertController(title: nil, message: "Please Wait...\n\n\n\n",
                                             preferredStyle: .alert)
@@ -102,7 +102,7 @@ extension UIViewController {
    @param completion Called after the spinner has been hidden.
    */
   func hideSpinner(_ completion: (() -> Void)?) {
-    ZmFunc().dlog("extension UIViewController - hideSpinner")
+    ZmF().dlog("extension UIViewController - hideSpinner")
     
     if let controller = SaveAlertHandle.get() {
       SaveAlertHandle.clear()

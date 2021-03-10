@@ -125,7 +125,7 @@ extension UIImageView {
 */
 //        gs://fb-test-210209.appspot.com/food_s/food_1.png
     func load_im(_ index: Int) {
-        ZmFunc().dlog("load_im - index: \(index) - ZmVar.sh().rt_im_st[\(index) ]: \(ZmVar.sh().rt_im_st[index-1])")
+        ZmF().dlog("load_im - index: \(index) - ZmV.sh().rt_im_st[\(index) ]: \(ZmV.sh().rt_im_st[index-1])")
         
         load_im_sd(index-1)
     }
@@ -134,7 +134,7 @@ extension UIImageView {
         // Reference to an image file in Firebase Storage
         let storageRef = Storage.storage().reference()
 //        let reference = storageRef.child("food_s/food_\(index%3+1).png")
-        let reference = storageRef.child(ZmVar.sh().rt_im_st[index])
+        let reference = storageRef.child(ZmV.sh().rt_im_st[index])
         
         // UIImageView in your ViewController
 //        let imageView: UIImageView = self.imageView
@@ -159,7 +159,7 @@ extension UIImageView {
 //        gs://fb-test-210209.appspot.com/food_s/food_1.png
         
 //        let temp_str = String(format:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(index).png")
-//        ZmFunc().dlog("Kingfisher - load_im \(index) - \(temp_str)")
+//        ZmF().dlog("Kingfisher - load_im \(index) - \(temp_str)")
 
         let size = CGSize(width: 1, height: 1)
         let placeholder = UIGraphicsImageRenderer(size: size).image { rendererContext in
@@ -180,7 +180,7 @@ extension UIImageView {
         let url = URL(string: String(format:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(index).png"))
         
 //        let temp_str = String(format:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(index).png")
-//        ZmFunc().dlog("Kingfisher - load_im \(index) - \(temp_str)")
+//        ZmF().dlog("Kingfisher - load_im \(index) - \(temp_str)")
 
         let size = CGSize(width: 1, height: 1)
         let placeholder = UIGraphicsImageRenderer(size: size).image { rendererContext in

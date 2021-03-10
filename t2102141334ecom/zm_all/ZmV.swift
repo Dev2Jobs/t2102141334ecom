@@ -1,5 +1,5 @@
 //
-//  ZmVar.swift
+//  ZmV.swift
 //  test210120
 //
 //  Created by soul on 2021/02/10.
@@ -7,14 +7,14 @@
 
 //import Foundation
 
-class ZmVar {
+class ZmV {
 //    싱글톤 객체를 이용하여 접근할 전역 변수 선언
     public var globalstring:String = "gl test"
     
     public var rt_im_st:[String]  = ["","","","","","","","","","","","","","","","","","","",""]
     
     struct staticInstance {
-        static var instance:ZmVar?
+        static var instance:ZmV?
     }
     
 //    init(_ index: Int) {
@@ -24,9 +24,9 @@ class ZmVar {
 //    }
     
 //    싱글톤 객체를 반환하는 함수 sharedInstance
-    class func sh()->ZmVar {
+    class func sh()->ZmV {
         if (nil == staticInstance.instance) {
-            staticInstance.instance = ZmVar()
+            staticInstance.instance = ZmV()
         }
         
         return staticInstance.instance!
@@ -40,4 +40,4 @@ class ZmVar {
     }
 }
 
-// ZmVar.sharedInstance().globalstring
+// ZmV.sharedInstance().globalstring

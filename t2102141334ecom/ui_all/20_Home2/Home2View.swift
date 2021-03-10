@@ -77,7 +77,7 @@ class Home2View: UIViewController {
 	// MARK: - Data methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
     func listenDocument() {
-        ZmFunc().dlog("Home2View - listenDocument")
+        ZmF().dlog("Home2View - listenDocument")
             // [START listen_document]
         
         Firestore.firestore().collection("restaurants").addSnapshotListener { documentSnapshot, error in
@@ -102,7 +102,7 @@ class Home2View: UIViewController {
     }
     
     func get_exam_db_all() {
-        ZmFunc().dlog("Home2View - get_exam_db_all")
+        ZmF().dlog("Home2View - get_exam_db_all")
         
         Firestore.firestore().collection("restaurants").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -123,8 +123,8 @@ class Home2View: UIViewController {
                     case .success(let restaurant):
                         if let restaurant = restaurant {
                             self.restaurants.insert(restaurant, at: ii)
-                            ZmVar.sh().rt_im_st[ii] = self.restaurants[ii].im_storage
-                            print("restaurants[\(ii)].name : \(self.restaurants[ii].name) ___ ZmVar.sh().rt_im_st[\(ii)]: \(ZmVar.sh().rt_im_st[ii])")
+                            ZmV.sh().rt_im_st[ii] = self.restaurants[ii].im_storage
+                            print("restaurants[\(ii)].name : \(self.restaurants[ii].name) ___ ZmV.sh().rt_im_st[\(ii)]: \(ZmV.sh().rt_im_st[ii])")
                             // A `City` value was successfully initialized from the DocumentSnapshot.
 //                            print("restaurant: \(restaurant)")
                         } else {
@@ -139,7 +139,7 @@ class Home2View: UIViewController {
                 ii += 1
             }
             temp_num = querySnapshot!.documents.count
-            ZmFunc().dlog("Zm_FB_FS - get_exam_db_all - documents.count: \(temp_num)")
+            ZmF().dlog("ZmFbFs - get_exam_db_all - documents.count: \(temp_num)")
             
             self.refresh_all(querySnapshot!.documents.count)
         }
@@ -177,7 +177,7 @@ class Home2View: UIViewController {
         
         num_col_v_dis = cur_num
         for ii in 0 ..< num_col_v_dis {
-//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
+//            print("ZmFbFs().restaurants[0].name -- \(ZmFbFs().restaurants[ii].name)")
             
             var dict1: [String: String] = [:]
             
@@ -227,20 +227,20 @@ class Home2View: UIViewController {
 //        dict6["originalPrice"] = "$97"
 //        products.append(dict6)
         
-//        Zm_FB_FS().get_exam_db_all(SC_H2V)
-//        Zm_FB_FS().get_exam_db_all(2)
+//        ZmFbFs().get_exam_db_all(SC_H2V)
+//        ZmFbFs().get_exam_db_all(2)
         
 //        db 데이터 로딩 딜레이로 늦게 가져온다
         
-//        Zm_FB_FS().restaurants[0].name = "777ㅁㄴㅇㅁㄴㅇ"
-//        print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[0].name)")
+//        ZmFbFs().restaurants[0].name = "777ㅁㄴㅇㅁㄴㅇ"
+//        print("ZmFbFs().restaurants[0].name -- \(ZmFbFs().restaurants[0].name)")
 
         for _ in 0 ..< num_col_v_dis {
-//            print("Zm_FB_FS().restaurants[0].name -- \(Zm_FB_FS().restaurants[ii].name)")
+//            print("ZmFbFs().restaurants[0].name -- \(ZmFbFs().restaurants[ii].name)")
             
             var dict1: [String: String] = [:]
-//            dict1["title"] = Zm_FB_FS().restaurants[ii].name
-//            dict1["brand"] = Zm_FB_FS().restaurants[ii].city
+//            dict1["title"] = ZmFbFs().restaurants[ii].name
+//            dict1["brand"] = ZmFbFs().restaurants[ii].city
             
             dict1["title"] = ""
             dict1["brand"] = ""

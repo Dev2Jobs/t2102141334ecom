@@ -1,5 +1,5 @@
 //
-//  ZmFunc.swift
+//  ZmF.swift
 //  test210120
 //
 //  Created by soul on 2021/01/26.
@@ -12,7 +12,7 @@ import SnapKit
 import Then
 
 
-class ZmFunc {
+class ZmF {
     
     func dlog(_ temp_str: String) {
         if ( "" == temp_str) {

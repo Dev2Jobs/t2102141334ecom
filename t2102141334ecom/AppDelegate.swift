@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        ZmFunc().dlog("AppDelegate - UIApplication.LaunchOptionsKey")
+        ZmF().dlog("AppDelegate - UIApplication.LaunchOptionsKey")
 // [START default_firestore]
         FirebaseApp.configure()
 //        let db = Firestore.firestore()
@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let navController = NavigationController(rootViewController: baseView)
         
         for ii in 0 ..< 20 {
-            ZmVar.sh().rt_im_st[ii] = ""
-//            ZmVar.sh().rt_im_st[ii] = "food_s/food_3.png" // food_s/food_\(ii%3+1).png
+            ZmV.sh().rt_im_st[ii] = ""
+//            ZmV.sh().rt_im_st[ii] = "food_s/food_3.png" // food_s/food_\(ii%3+1).png
         }
         
         Login1View = t2102141334ecom.Login1View(nibName: "Login1View", bundle: nil)
@@ -50,29 +50,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         
-        ZmFunc().dlog("AppDelegate - UIApplication.LaunchOptionsKey - 22")
+        ZmF().dlog("AppDelegate - UIApplication.LaunchOptionsKey - 22")
         
         return true
     }
 //=================================
     func applicationWillResignActive(_ application: UIApplication) {
-        ZmFunc().dlog("AppDelegate - applicationWillResignActive")
+        ZmF().dlog("AppDelegate - applicationWillResignActive")
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        ZmFunc().dlog("AppDelegate - applicationDidEnterBackground")
+        ZmF().dlog("AppDelegate - applicationDidEnterBackground")
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        ZmFunc().dlog("AppDelegate - applicationWillEnterForeground")
+        ZmF().dlog("AppDelegate - applicationWillEnterForeground")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        ZmFunc().dlog("AppDelegate - applicationDidBecomeActive")
+        ZmF().dlog("AppDelegate - applicationDidBecomeActive")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        ZmFunc().dlog("AppDelegate - applicationWillTerminate")
+        ZmF().dlog("AppDelegate - applicationWillTerminate")
     }
 //=================================
     // MARK: UISceneSession Lifecycle

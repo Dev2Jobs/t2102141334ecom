@@ -19,7 +19,7 @@ class SignUp1View: UIViewController {
 
     
 	override func viewDidLoad() {
-        ZmFunc().dlog("SignUp1View - viewDidLoad")
+        ZmF().dlog("SignUp1View - viewDidLoad")
 
 		super.viewDidLoad()
 
@@ -38,23 +38,23 @@ class SignUp1View: UIViewController {
 	// MARK: - User actions
 
 	@IBAction func actionFacebook(_ sender: Any) {
-        ZmFunc().dlog("SignUp1View - actionFacebook")
+        ZmF().dlog("SignUp1View - actionFacebook")
 
 		print(#function)
 		dismiss(animated: true)
 	}
 
 	@IBAction func actionContinue(_ sender: Any) {
-        ZmFunc().dlog("SignUp1View - actionContinue")
+        ZmF().dlog("SignUp1View - actionContinue")
 
 //		print(#function)
 //		dismiss(animated: true)
         
-        ZmFunc().dlog(textFieldFirstName.text!)
-        ZmFunc().dlog(textFieldLastName.text!)
-        ZmFunc().dlog(textFieldEmail.text!)
-        ZmFunc().dlog(textFieldPassword.text!)
-        ZmFunc().dlog(textFieldPassword2.text!)
+        ZmF().dlog(textFieldFirstName.text!)
+        ZmF().dlog(textFieldLastName.text!)
+        ZmF().dlog(textFieldEmail.text!)
+        ZmF().dlog(textFieldPassword.text!)
+        ZmF().dlog(textFieldPassword2.text!)
     
         GFB_createUser(email: textFieldEmail.text!, password: textFieldPassword.text!)
 
@@ -101,14 +101,14 @@ class SignUp1View: UIViewController {
 	}
 
 	@IBAction func actionTerms(_ sender: Any) {
-        ZmFunc().dlog("SignUp1View - actionTerms")
+        ZmF().dlog("SignUp1View - actionTerms")
 
 		print(#function)
 		dismiss(animated: true)
 	}
 
 	@IBAction func actionPrivacy(_ sender: Any) {
-        ZmFunc().dlog("SignUp1View - actionPrivacy")
+        ZmF().dlog("SignUp1View - actionPrivacy")
 
 		print(#function)
 		dismiss(animated: true)

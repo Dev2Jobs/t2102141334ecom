@@ -15,7 +15,7 @@ class BaseView: UIViewController {
 
     
 	override func viewDidLoad() {
-        ZmFunc().dlog("BaseView - viewDidLoad")
+        ZmF().dlog("BaseView - viewDidLoad")
 
 		super.viewDidLoad()
 		title = "List of Views"
@@ -119,20 +119,20 @@ class BaseView: UIViewController {
 extension BaseView: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
-        ZmFunc().dlog("BaseView - numberOfSections")
+        ZmF().dlog("BaseView - numberOfSections")
 
 		return 1
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ZmFunc().dlog("BaseView - tableView")
+        ZmF().dlog("BaseView - tableView")
         print(names.count)
 
 		return names.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        ZmFunc().dlog("BaseView - tableView - UITableViewCell")
+        ZmF().dlog("BaseView - tableView - UITableViewCell")
 
 		var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
 		if (cell == nil) { cell = UITableViewCell(style: .default, reuseIdentifier: "cell") }
@@ -149,7 +149,7 @@ extension BaseView: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        ZmFunc().dlog("BaseView UITableViewDelegate - tableView - didSelectRowAt")
+        ZmF().dlog("BaseView UITableViewDelegate - tableView - didSelectRowAt")
         print(indexPath.row)
         
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -157,7 +157,7 @@ extension BaseView: UITableViewDelegate {
 		switch names[indexPath.row] {
 
 			case "Login1View":
-                ZmFunc().dlog("BaseView UITableViewDelegate - tableView - didSelectRowAt - Login1View")
+                ZmF().dlog("BaseView UITableViewDelegate - tableView - didSelectRowAt - Login1View")
                 
 				let login1View = Login1View()
 				login1View.isModalInPresentation = true
